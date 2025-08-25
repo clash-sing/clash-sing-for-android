@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "clash-sing-for-android"
 include ':app'
+include ':proxyLib'
