@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.clashsing.proxylib'
-    compileSdk libs.versions.targetSdk.get().toInteger()
+    compileSdkVersion libs.versions.targetSdk.get().toInteger()
 
     defaultConfig {
         minSdk libs.versions.minSdk.get().toInteger()
@@ -23,8 +23,8 @@ android {
         sourceCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
         targetCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
     }
-    kotlinOptions {
-        jvmTarget = libs.versions.javaVersion.get()
+    kotlin {
+        jvmToolchain(libs.versions.javaVersion.get().toInteger())
     }
 }
 

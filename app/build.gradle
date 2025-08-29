@@ -9,7 +9,7 @@ android {
     def baseAppId = "com.clashsing.proxy"
 
     namespace baseAppId
-    compileSdk libs.versions.targetSdk.get().toInteger()
+    compileSdkVersion libs.versions.targetSdk.get().toInteger()
 
     defaultConfig {
         applicationId "${baseAppId}.android"
@@ -31,8 +31,8 @@ android {
         sourceCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
         targetCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
     }
-    kotlinOptions {
-        jvmTarget = libs.versions.javaVersion.get()
+    kotlin {
+        jvmToolchain(libs.versions.javaVersion.get().toInteger())
     }
     buildFeatures {
         compose true
